@@ -1,27 +1,22 @@
 import React, { useEffect, useState } from "react";
+import fetch from "isomorphic-fetch";
 
 function App() {
-  const [backendData, setBackendData] = useState([{}]);
+  const [weatherData, setWeatherData] = useState({});
+  const [city, setCity] = useState("Amsterdam");
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("/api");
+      const response = await fetch(`/weather/${city}`);
       const data = await response.json();
-      setBackendData(data);
+      // console.log(data)
+      setWeatherData(data);
     }
-
     fetchData();
-  }, []);
-
+  }, [city]);
   return (
     <div>
-      {typeof backendData.users === "undefined" ? (
-        <p>Loading...</p>
-      ) : (
-        backendData.users.map((user, i) => {
-          return <p key={i}>{user}</p>;
-        })
-      )}
+      <h1>{weatherData.name}</h1>
     </div>
   );
 }
