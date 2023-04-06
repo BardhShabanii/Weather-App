@@ -1,0 +1,12 @@
+body {
+  font-family: sans-serif;
+}
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid olive;
+  max-width: 65vw;
+  min-height: 75vh;
+}
