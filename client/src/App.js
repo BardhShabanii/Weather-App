@@ -9,14 +9,20 @@ function App() {
     async function fetchData() {
       const response = await fetch(`/weather/${city}`);
       const data = await response.json();
-      // console.log(data)
+      console.log(data);
       setWeatherData(data);
     }
     fetchData();
   }, [city]);
   return (
     <div>
-      <h1>{weatherData.name}</h1>
+      {weatherData.main && (
+        <div>
+          <h1>{weatherData.name}</h1>
+          <h1>{weatherData.main.temp}</h1>
+        </div>
+      )}
+      {!weatherData.main && <p>Loading weather data...</p>}
     </div>
   );
 }
