@@ -1,0 +1,11 @@
+
+input{
+    border-radius: 10px;
+    padding: 5px
+}
+
+.submit-button {
+    margin-left: 5px;
+    border-radius: 10px;
+    padding: 5px;
+}
