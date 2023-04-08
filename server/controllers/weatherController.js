@@ -1,12 +1,10 @@
 const fetch = require("isomorphic-fetch");
 const API_KEY = "5f5ab5356c313e996d2b5e2ef82b536f";
-// const city_name = "Amsterdam";
 
 module.exports = {
   getHome: async (req, res) => {
     try {
       const city_name = req.params.city
-      console.log(city_name)
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${API_KEY}&units=metric`;
       const response = await fetch(url);
       if (!response.ok) {

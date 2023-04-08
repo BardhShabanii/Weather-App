@@ -4,9 +4,7 @@ const app = express();
 const weatherRoutes = require("./routes/weatherRoutes");
 const PORT = 5000;
 
-require("dotenv").config;
-
-// const apiKey = `${process.env.API_KEY}`;
+// require("dotenv").config;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));

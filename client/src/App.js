@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import fetch from "isomorphic-fetch";
 import "./App.css";
 import Searchbar from "./Components/Searchbar";
-import NorthEastIcon from "@mui/icons-material/NorthEast";
-import SouthEastIcon from "@mui/icons-material/SouthEast";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 function App() {
   const [city, setCity] = useState("Amsterdam");
@@ -50,25 +50,29 @@ function App() {
             </div>
             <div className="weather-info">
               <h2 className="current-weather">
-                Current Weather: {weatherData.weather[0].main}
+                {weatherData.weather[0].description}
               </h2>
-              <h4>{weatherData.weather[0].description}</h4>
-              {/* <div className="min-max-container"> */}
-              <h2 className="min-max">
-                Min: {weatherData.main.temp_min.toFixed(1)}°C
-                <SouthEastIcon />
-              </h2>
+              <img
+                id="wicon"
+                src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+                alt="weather icon"
+              ></img>
+              <div className="min-max-container">
+                <h2 className="min-max">
+                  {weatherData.main.temp_max.toFixed(1)}°C
+                  <ArrowUpwardIcon style={{ color: "crimson" }} />
+                </h2>
 
-              <h2 className="min-max">
-                {weatherData.main.temp_max.toFixed(1)}°C
-                <NorthEastIcon />
-              </h2>
-              {/* </div> */}
+                <h2 className="min-max">
+                  {weatherData.main.temp_min.toFixed(1)}°C
+                  <ArrowDownwardIcon style={{ color: "lightblue" }} />
+                </h2>
+              </div>
               <h2>Feels Like: {weatherData.main.feels_like.toFixed(1)}°C</h2>
             </div>
           </div>
           <div className="wind-humidity-container">
-            <h2>Wind Speed: {weatherData.wind.speed}m/s</h2>
+            <h2>Wind Speed: {weatherData.wind.speed.toFixed(1)}m/s</h2>
             <h2>Humidity: {weatherData.main.humidity}%</h2>
           </div>
         </>
