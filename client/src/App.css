@@ -5,7 +5,7 @@ body {
 }
 
 h1 {
-  font-size: xx-large;
+  font-size: 45px;
   margin-bottom: 2vh;
   margin-top: 1vh;
 }
@@ -14,7 +14,9 @@ h2 {
   font-size: large;
   margin-bottom: 5px;
 }
-
+.current-weather {
+  margin-bottom: 0px;
+}
 h4 {
   margin-top: 0;
   margin-bottom: 5px;
@@ -23,6 +25,7 @@ h4 {
 .container {
   margin: auto;
   display: flex;
+  padding: 10px;
   flex-direction: column;
   align-items: center;
   border: 2px solid olive;
@@ -32,22 +35,52 @@ h4 {
   border-radius: 15px;
   box-shadow: 10px 10px 10px lightgrey;
   background-color: white;
-  /* background-image: url("../public/images/city3.jpg"); */
-  /* background-size: cover; */
+  background-color: white;
 }
 
 .min-max-container {
   display: flex;
+  align-items: center;
 }
 
 .wind-humidity-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
 }
-
-h2:first-of-type {
-  margin-right: 10px;
+.min-max {
+  display: flex;
+  align-items: center;
+  margin: 0px;
 }
-
 .searchbar {
-  margin-top: 3vh;
+  margin-top: 1vh;
+}
+
+.weather-container {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.temperature-container {
+  display: flex;
+  padding-right: 10px;
+  align-items: center;
+}
+.temperature {
+  font-size: 50px;
+  margin: auto;
+  padding: 0px;
+  display: flex;
+  /* font-stretch: ; */
+}
+.celsius {
+  font-size: 30px;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
